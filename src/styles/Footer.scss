@@ -1,1 +1,149 @@
 @use './Variables/' as *;
+
+.footer{
+   padding: 0 6rem;
+    .logo{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+        padding: 3rem 0;
+        font-size: $font-size-md;
+        text-align: center;
+    }
+    .footer-wrap{
+        display: flex;
+        gap: 1rem;
+        .left{
+           flex:1 1 33.33%;
+           display: flex;
+           justify-content: space-evenly;
+           position: relative;
+           padding-top: 2rem;
+           gap: 1rem;
+            .left-wrap{
+                .title{
+                    font-size: $font-size-md;
+                    cursor: pointer;
+                    padding-bottom: 0.8rem;
+                }
+                .desc-wrap{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8rem;
+                    & > a{
+                        font-size: $font-size-base;
+                    }
+                }
+            }
+           &:before{
+            content: '';
+            position: absolute;
+            height: 2px;
+            background-color: $text-color;
+            width: 100%;
+            top: 0;
+            left: 0;
+
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            height: 2px;
+            background-color: $text-color;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+
+        }
+        @include breakpoint(medium){
+            flex:1 1 100%;
+            justify-content: space-around;
+            padding: 1rem 0;
+        }
+        }
+        .center{
+            flex:1 1 33.33%;
+            display: flex;
+                justify-content: center;
+                align-items: center;
+
+            .circle{
+                background-image: url('/images/image-2.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 300px;
+                height: 300px;
+                border: 2px solid $text-color;
+                border-radius: 50%;
+            }
+            @include breakpoint(medium){
+                flex:1 1 100%;
+                justify-content: space-around;
+                padding: 1rem 0;
+            }
+        }
+        .right{
+            flex:1 1 33.33%;
+            display: flex;
+            justify-content: space-evenly;
+            position: relative;
+            padding-top: 2rem;
+            gap: 1rem;
+            .right-wrap{
+                .title{
+                    font-size: $font-size-md;
+                    cursor: pointer;
+                    padding-bottom: 0.8rem;
+                }
+                .desc-wrap{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8rem;
+                    & > a{
+                        font-size: $font-size-base;
+                    }
+                }
+                
+            }
+           &:before{
+            content: '';
+            position: absolute;
+            height: 2px;
+            background-color: $text-color;
+            width: 100%;
+            top: 0;
+            right: 0;
+
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            height: 2px;
+            background-color: $text-color;
+            width: 100%;
+            bottom: 0;
+            right: 0;
+
+        }
+        @include breakpoint(medium){
+            flex:1 1 100%;
+            justify-content: space-around;
+            padding: 1rem 0;
+        }
+        }
+        @include breakpoint(medium){
+            flex-wrap: wrap;
+        
+        }
+    }
+    .copyright{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0;
+    }
+    
+    @include breakpoint(small){
+        padding: 0 2rem;
+        
+    }
+}

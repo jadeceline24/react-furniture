@@ -1,0 +1,49 @@
+@use './Variables/' as *;
+
+.subscribe{
+    height: 100vh;
+    background-image: url('/images/joinclub.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    
+    &:before{
+        content: '';
+        background-image: url('/images/joinclub.jpg');
+        position: absolute;
+        inset: 0;
+        opacity: 0.3;
+    }
+    
+    .subs-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+        z-index: 1;
+        .title{
+            font-size: $font-size-xxl;
+            max-width: 800px;
+            
+        }
+        .email{
+            width: 100%;font-size: $font-size-md;
+            background-color: transparent;
+            border: 2px solid $text-color;
+            border-radius: 50px;
+            padding: 1.5rem;
+            
+            &::placeholder{
+                color: $text-color;
+            }
+        }
+    }
+    @include breakpoint(medium){
+        padding: 0 1rem;
+    }
+}

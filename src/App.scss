@@ -1,1 +1,50 @@
-@use './styles/Variables/global';
+@use './styles/Variables/global' as *;
+
+body.loading {
+    overflow: hidden;
+    height: 100vh;
+    
+  }
+  .main-body{
+    position: relative;
+    
+  }
+.transition-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img{
+        width: 800px;
+        display: flex;
+        max-height: 80vh;
+        
+    }
+    &.final{
+        display: block;
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        z-index: -100;
+        top: -120px;
+        max-height: 70vh;
+        @media (max-width:30em) {
+            max-height: 30vh;
+        }
+        img{
+            width: 100%;
+            max-width: 100%;
+        }
+
+        
+    }
+    
+    
+    
+
+}

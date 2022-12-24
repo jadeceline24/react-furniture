@@ -4,12 +4,13 @@ $container-width-md: 86%;
 $container-width-sm: 90%;
 
 //colors
-$body-color: #FEFAE0;
-$body-color2: #C2DABD;
+$body-color: #e9edc9;
+$body-color2: #ccd5ae;
 
 //text color
-$text-color: #1E1E1E;
-$text-color2: #52685F;
+$text-color: #2b2d42;
+$text-color2: #ccd5ae;
+$text-color3: white;
 
 //transition
 $transition: all 400ms ease;
@@ -23,3 +24,12 @@ $font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
 $font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
 $font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
 $font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+
+
+// $theme-color: (
+//     $primary: $body-color,
+//     $secondary: $body-color2,
+// )
+// @function theme-color($key) {
+//     @return map-get($theme-color, $key);
+// }

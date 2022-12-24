@@ -1,0 +1,56 @@
+@use './Variables/' as *;
+
+// .transition-image{
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     height: 100vh;
+//     width: 100vw;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     img{
+//         width: 500px;
+//         display: flex;
+//     }
+    
+
+// }
+.loader{
+    overflow: hidden;
+    height: 100vh;
+    .loader-inner{
+        .image-block{
+            position: absolute;
+            transform-origin: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            img{
+                width: 100%;
+                object-fit: fill;
+            }
+            &.image-1{
+                width: 300px;
+                left: 16%;
+                top: 14%;
+            }
+            &.image-3{
+                width: 300px;
+                right: 16%;
+                top: 14%;
+            }
+            &.image-4{
+                width: 300px;
+                left: 16%;
+                bottom: 14%;
+            }
+            &.image-5{
+                width: 300px;
+                right: 16%;
+                bottom: 14%;
+            }
+        }
+    }
+}

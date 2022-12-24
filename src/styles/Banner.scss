@@ -1,0 +1,105 @@
+@use './Variables/' as *;
+
+.banner{
+    position: relative;
+    z-index: 100;
+
+    .banner-row{
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        &.center{
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .row-title, 
+        .row-letter{
+            position: relative;
+            font-size: 4em; 
+            display: inline-block;
+            white-space: nowrap;
+            letter-spacing: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            line-height: 0.9;
+            @include breakpoint(large){
+                font-size: 3.5em;
+                
+            }
+            @include breakpoint(medium){
+                font-size: 3em;
+                
+            }
+            @include breakpoint(small){
+                font-size: 2em;
+                
+            }
+
+            
+        }
+        .row-col{
+            width: 50%;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+
+            .row-message{
+                width: 300px;
+                font-size: $font-size-base;
+                line-height: 1.5rem;
+                letter-spacing: 0.5px;
+                @include breakpoint(medium){
+                    display: none;
+                }
+            }
+            
+        }
+        .scroll{
+            height: 150px;
+            width: 150px;
+            background-color: $text-color2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-size: $font-size-md;
+            position: absolute;
+            left: 10rem;
+            @include breakpoint(xllarge){
+                display: none;
+            }
+        }
+
+        
+    }
+
+}
+.marquee{
+    position: relative;
+    overflow: hidden;
+    &.animate .marquee__inner{
+        animation-play-state: running;
+    }
+    .marquee__inner{
+        width: fit-content;
+        display: flex;
+        position: relative;
+        transform: translate3d(calc(-25% + 10vw ), 0, 0);
+        animation: marquee 5s linear infinite;
+        animation-play-state: paused;
+
+    }
+    .row-title{
+        padding: 0 8vw;
+    }
+}
+@keyframes marquee {
+    0%{
+        transform: translate3d(calc(-25% + 10vw ), 0, 0);
+    }
+    100%{
+        transform: translate3d(calc(-50% + 10vw ), 0, 0);
+    }
+}

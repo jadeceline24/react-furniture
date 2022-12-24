@@ -1,0 +1,116 @@
+@use './Variables/' as *;
+
+.products{
+    padding: 0 6rem;
+    .title{
+       text-align: center;
+       text-transform: uppercase;
+        padding: 1.5rem 0;
+        font-size: $font-size-lg;
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            height: 2px;
+            background-color: $text-color;
+            width: 100%;
+            top: 0;
+            left: 0;
+
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            height: 2px;
+            background-color: $text-color;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+
+        }
+    }
+    .gallery{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem 0;
+
+        .gallery-image-wrap{
+            flex: 1 1 500px;
+            overflow: hidden;
+           
+            .gallery-image{
+                width: 400px;
+                height: 400px;
+
+                cursor: pointer;
+                transition: 0.9s cubic-bezier(0.075, 0.82, 0.165, 1);
+                
+                @include breakpoint(medium){
+                    width: 100%;
+                    height: 100%;
+                    
+                }
+                
+            }
+            @include breakpoint(medium){
+                flex: 1 1 100%;
+                
+            }
+        }
+        .image-title{
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            font-size: $font-size-base;
+            align-items: center;
+            cursor: pointer;
+
+            & > p{
+                font-weight: bold;
+            }
+        }
+
+    }
+    .gallery-btn{
+        text-align: center;
+        padding: 1.5rem 0;
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            height: 2px;
+            background-color: $text-color;
+            width: 100%;
+            top: 0;
+            left: 0;
+
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            height: 2px;
+            background-color: $text-color;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+
+        }
+        .btn{
+            text-transform: uppercase;
+            font-size: $font-size-md;
+            cursor: pointer;
+            outline: none;
+            background-color: transparent;
+            font-weight: bold;
+            
+        
+        }
+    }
+    @include breakpoint(small){
+        padding: 0 2rem;
+        
+    }
+}

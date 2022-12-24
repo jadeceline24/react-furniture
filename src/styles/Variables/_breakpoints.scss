@@ -1,8 +1,10 @@
 $breakpoints: (
-  small: 480px,
-  medium: 768px,
-  large: 960px,
-  wide: 1200px
+  small: 30em, //480px,
+  medium: 48em, //768px,
+  large: 60em, //960px,
+  xllarge: 75em, //1200px,
+  wide: 90em, //1440px,
+  xlwide: 120em, //1920px
 )!default;
 @mixin breakpoint($name) {
   @if not map-has-key($breakpoints, $name) {
@@ -10,6 +12,17 @@ $breakpoints: (
   }
   @else {
     @media (max-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-up($name) {
+  @if not map-has-key($breakpoints, $name) {
+    @warn "Invalid breakpoint `#{$name}`.";
+  }
+  @else {
+    @media (min-width: map-get($breakpoints, $name)) {
       @content;
     }
   }

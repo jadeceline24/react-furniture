@@ -1,0 +1,63 @@
+@use './Variables/' as *;
+
+.hero{
+    padding: 5rem 0;
+    .hero-wrap{
+        display: flex;
+        .hero-title{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            
+            
+            .title{
+                font-size: $font-size-xl;
+                text-transform: uppercase;
+                max-width: 550px;
+                padding: 0 6rem;
+                
+                @include breakpoint(medium){
+                    padding: 2rem 6rem;
+                }
+                @include breakpoint(small){
+                    padding: 1rem 2rem;
+                }
+            }
+            .desc{
+                max-width: 800px;
+                line-height: 1.5;
+                font-size: $font-size-base;
+                padding: 0 6rem;
+                @include breakpoint(small){
+                    padding: 0 2rem;
+                }
+            }
+            @include breakpoint(medium){
+                flex: 1 1 100%;
+            }
+            
+        }
+        .hero-image{
+            flex: 1;
+            & > img{
+                max-height: 800px;
+                width: 100%;
+                display: block;
+            }
+            @include breakpoint(medium){
+                flex: 1 1 100%;
+            }
+        }
+        &:nth-child(2){
+            flex: 1;
+            flex-direction: row-reverse;
+        }
+        @include breakpoint(medium){
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+    }
+}

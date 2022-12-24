@@ -1,1 +1,140 @@
 @use './Variables/' as *;
+
+.header{
+    font-size: $font-size-md;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    margin: 0 auto;
+    padding: 0 6rem;
+    
+    .header-wrap{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        
+        .logo{
+            font-size: $font-size-xl;
+            font-weight: 400;
+            cursor: pointer;
+            @include breakpoint(large){
+                flex: 4;
+            }
+            @include breakpoint(small){
+                font-size: $font-size-lg;
+            }
+        }
+        .nav{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            li{
+                margin: 0 1rem;
+                cursor: pointer;
+            }
+            @include breakpoint(large){
+                display: none;
+            }
+        }
+        .mobile-nav{
+            position: absolute;
+            top: 10rem;
+            background: $text-color;
+            width:clamp(50%, 700px, 100%);
+            margin: 0 auto;
+            z-index: 1000;
+            padding: 3rem 0;
+            
+            li{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem;
+                
+                
+            }
+            li > a{
+                color: $text-color3;
+            }
+            @media (min-width: 961px){
+                display: none;
+            }
+            @include breakpoint(large){
+                display: block;
+                
+            }
+            
+        }
+        .contact{
+            cursor: pointer;
+            border-bottom: 2px solid $text-color;
+            @include breakpoint(large){
+               margin: 0 2rem;
+            }
+        }
+        .menu{
+            height: 56px;
+            width: 56px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+            transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+            &:hover{
+                background-color: $body-color2;
+                border-radius: 50%;
+            }
+            .open{
+                span{
+                    width: 20px;
+                    height: 3px;
+                    background: #000;
+                    margin: 2px 0;
+                    display: none;
+                    transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+                    
+                    @include breakpoint(large){
+                        display: block;
+                    }
+                }
+            }
+            .close{
+                span{
+                    width: 20px;
+                    height: 3px;
+                    background: #000;
+                    margin: 2px 0;
+                    display: none;
+                    transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+                    &:nth-child(1){
+                        transform: rotate(135deg);
+                    }
+                    
+                    &:nth-child(2){
+                        transform: rotate(-135deg);
+                    }
+
+                    @include breakpoint(large){
+                        display: block;
+                        margin: -2.5px;
+                        background: #000;
+                    }
+                }
+                
+                
+            }
+            @include breakpoint(large){
+                display: flex;
+            }
+        }
+    }
+    @include breakpoint(small){
+        padding: 0 1rem;
+        height: 100px;
+    }
+}
